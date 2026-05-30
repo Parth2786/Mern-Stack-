@@ -4,217 +4,191 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Online Shopping site for Mobile, Cloths...</title>
+  <title>Flipkart Layout Clone</title>
   <link rel="shortcut icon"
     href="https://tse4.mm.bing.net/th/id/OIP.I70WuHuME5bj3-i-LO_NhwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
     type="image/x-icon" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css" />
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: gilroy, sans-serif;
+      font-family: Arial, sans-serif;
     }
 
-    html,
     body {
-      height: 100vh;
-      width: 100vw;
-      background-color: #ffffff;
+      background-color: #f1f3f6;
     }
 
-    main {
-      width: 75%;
-      background-color: rgb(216, 213, 213);
-      margin: 0px auto;
-    }
-
+    /* Header */
     header {
-      width: 75%;
-      height: 100px;
-      /* top, right, bottom left */
-      margin: 0px auto;
+      width: 100%;
+      height: 60px;
+      background-color: #2874f0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
       position: fixed;
-      left: 12%;
+      top: 0;
       z-index: 100;
     }
 
-    nav {
-      display: flex;
-      flex-direction: column;
-      background-color: rgb(250, 250, 250);
-      gap: 10px;
-    }
-
-    #top-nav {
-      display: flex;
-      justify-content: space-between;
-      margin: 0px 10px;
-      padding: 1%;
-    }
-
-    .top-nav-left {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .btn {
-      width: 150px;
-      height: 30px;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
+    .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
       cursor: pointer;
     }
 
-    .top-nav-right {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 30%;
-    }
-
-    #bottom-nav {
-      background-color: rgb(213, 206, 206);
-      height: 50px;
-      border-radius: 10px;
-      width: 100%;
-      padding: 5px;
-      /* Flex */
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn-box {
-      width: 70%;
-      background-color: aquamarine;
-      height: 80%;
-    }
-
-    .login-box {
-      width: 25%;
-      background-color: rgb(134, 233, 114);
-      height: 80%;
-    }
-
-    #icons-box {
-      width: 100%;
-      background-color: greenyellow;
-      height: 80px;
-    }
-
-    #icons-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      gap: 5px;
-    }
-
-    .icons-items {
-      /* flex: 1; */
-      width: 70px;
-      height: 70px;
-      padding: 5px;
-      background-color: rgb(233, 233, 233);
-    }
-
-    main {
-      position: relative;
-      top: 230px;
-      margin-left: 11.8%;
-    }
-
-    #ad-banner {
-      display: flex;
-      gap: 10px;
-      padding: 10px;
-    }
-
-    .ad-banners {
+    .search-bar {
       flex: 1;
-      background-color: rgb(233, 233, 233);
-      height: 150px;
+      margin: 0 20px;
       display: flex;
-      justify-content: center;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 2px 0 0 2px;
+    }
+
+    .search-bar button {
+      background-color: #ffe11f;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 0 2px 2px 0;
+      cursor: pointer;
+    }
+
+    .nav-right {
+      display: flex;
       align-items: center;
+      gap: 20px;
+      color: white;
+      font-size: 14px;
+    }
+
+    .nav-right i {
+      margin-right: 5px;
+    }
+
+    /* Category strip */
+    .categories {
+      margin-top: 60px;
+      background-color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .category-item {
+      text-align: center;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .category-item i {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 5px;
+      color: #2874f0;
+    }
+
+    /* Banner section */
+    .banner {
+      margin: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .banner div {
+      flex: 1;
+      height: 200px;
+      background-color: #ddd;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    /* Advertisement section */
+    #advertisement {
+      width: 90%;
+      margin: 30px auto;
+      background-color: #fff;
       border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    #banner-item-1 {
-      flex-grow: 2;
-      background-color: aqua;
+    #advertisement h1 {
+      margin-bottom: 20px;
     }
 
-    #banner-item-2 {
-      flex-grow: 2;
-      background-color: crimson;
-    }
-
-    #banner-item-3 {
-      flex-grow: 1;
-      background-color: beige;
+    .adds {
+      background-color: #f9f9f9;
+      height: 250px;
+      width: 200px;
+      border-radius: 10px;
+      display: inline-block;
+      margin: 10px;
+      text-align: center;
+      line-height: 250px;
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
+  <!-- Header -->
   <header>
-    <nav>
-      <section id="top-nav">
-        <div class="top-nav-left">
-          <div class="btn" style="background-color: #ffe51fff">
-            ✅ Flipkart
-          </div>
-          <div style="background-color: gainsboro" class="btn">✈️ Travel</div>
-        </div>
-        <div class="top-nav-right">
-          <i class="fa-sharp fa-solid fa-location-dot"></i>
-          <p>Location : Vadodra</p>
-        </div>
-      </section>
-
-      <section id="bottom-nav">
-        <div class="btn-box"></div>
-        <div class="login-box"></div>
-      </section>
-      <section id="icons-box">
-        <div class="icons-items">Box 1</div>
-        <div class="icons-items">Box 2</div>
-        <div class="icons-items">Box 3</div>
-        <div class="icons-items">Box 4</div>
-        <div class="icons-items">Box 5</div>
-        <div class="icons-items">Box 6</div>
-        <div class="icons-items">Box 7</div>
-        <div class="icons-items">Box 8</div>
-        <div class="icons-items">Box 9</div>
-        <div class="icons-items">Box 10</div>
-        <div class="icons-items">Box 11</div>
-        <div class="icons-items">Box 12</div>
-        <div class="icons-items">Box 13</div>
-        <div class="icons-items">Box 14</div>
-      </section>
-    </nav>
+    <div class="logo">Flipkart</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products, brands and more">
+      <button><i class="fa fa-search"></i></button>
+    </div>
+    <div class="nav-right">
+      <div><i class="fa fa-user"></i> Login</div>
+      <div><i class="fa fa-shopping-cart"></i> Cart</div>
+      <div><i class="fa fa-store"></i> Become a Seller</div>
+    </div>
   </header>
-  <main>
-    <section id="ad-banner">
-      <div class="ad-banners" id="banner-item-1">Ad Banner 1</div>
-      <div class="ad-banners" id="banner-item-2">Ad Banner 2</div>
-      <div class="ad-banners" id="banner-item-3">Ad Banner 3</div>
-    </section>
-  </main>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="category-item"><i class="fa fa-tshirt"></i> Fashion</div>
+    <div class="category-item"><i class="fa fa-mobile-alt"></i> Mobiles</div>
+    <div class="category-item"><i class="fa fa-laptop"></i> Electronics</div>
+    <div class="category-item"><i class="fa fa-couch"></i> Furniture</div>
+    <div class="category-item"><i class="fa fa-gem"></i> Jewellery</div>
+    <div class="category-item"><i class="fa fa-basketball-ball"></i> Sports</div>
+    <div class="category-item"><i class="fa fa-book"></i> Books</div>
+  </section>
+
+  <!-- Banner -->
+  <section class="banner">
+    <div>Ad Banner 1</div>
+    <div>Ad Banner 2</div>
+    <div>Ad Banner 3</div>
+  </section>
+
+  <!-- Advertisement -->
+  <div id="advertisement">
+    <h1>Home & Decorates</h1>
+    <div class="adds">Item 1</div>
+    <div class="adds">Item 2</div>
+    <div class="adds">Item 3</div>
+    <div class="adds">Item 4</div>
+  </div>
 </body>
 
 </html>
