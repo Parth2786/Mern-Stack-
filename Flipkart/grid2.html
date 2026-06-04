@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .grid-container {
+            width: 900px;
+            height: 600px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1.2fr 1.2fr;
+
+            grid-template-rows:
+                80px 220px 220px 80px;
+
+            gap: 10px;
+
+            grid-template-areas:
+                "header header header"
+                "sidebar content1 content1"
+                "sidebar content2 content3"
+                "footer footer footer";
+        }
+
+        .header {
+            grid-area: header;
+            background: #f5a000;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background: #ff6600;
+        }
+
+        .content1 {
+            grid-area: content1;
+            background: #e60000;
+        }
+
+        .content2 {
+            grid-area: content2;
+            background: #d400ff;
+        }
+
+        .content3 {
+            grid-area: content3;
+            background: #d400ff;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #f5a000;
+        }
+
+        .header,
+        .sidebar,
+        .content1,
+        .content2,
+        .content3,
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <header class="header">HEADER</header>
+
+        <aside class="sidebar">SIDEBAR</aside>
+
+        <section class="content1">CONTENT 1</section>
+
+        <section class="content2">CONTENT 2</section>
+
+        <section class="content3">CONTENT 3</section>
+
+        <footer class="footer">FOOTER</footer>
+    </div>
+</body>
+
+</html>

@@ -1,56 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accurate Grid Layout</title>
-  <style>
-    body {
-      background-color: #1e2a5a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container {
-      display: grid;
-      grid-template-columns: 200px 200px 200px 200px;
-      grid-template-rows: 150px 150px 150px;
-      gap: 10px;
-    }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #2b2f5b;
+        }
 
-    .box {
-      border-radius: 5px;
-    }
+        .grid-container {
+            width: 900px;
+            height: 450px;
 
-    .green { background-color: #4CAF50; }
-    .red { background-color: #F44336; }
-    .yellow { background-color: #FFEB3B; }
+            display: grid;
 
-    /* Layout based on screenshot */
-    .box1 { grid-row: 1 / 4; grid-column: 1 / 2; } /* tall green left */
-    .box2 { grid-row: 1 / 2; grid-column: 2 / 3; } /* top green */
-    .box3 { grid-row: 1 / 2; grid-column: 3 / 4; } /* top green */
-    .box4 { grid-row: 1 / 2; grid-column: 4 / 5; } /* top red */
-    .box5 { grid-row: 2 / 3; grid-column: 2 / 3; } /* middle yellow */
-    .box6 { grid-row: 2 / 3; grid-column: 3 / 4; } /* middle red */
-    .box7 { grid-row: 2 / 4; grid-column: 4 / 5; } /* tall green right */
-    .box8 { grid-row: 3 / 4; grid-column: 2 / 3; } /* bottom red */
-    .box9 { grid-row: 3 / 4; grid-column: 3 / 4; } /* bottom yellow */
-  </style>
+            /* Width of columns */
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+
+            /* Height of rows */
+            grid-template-rows: 1fr 1fr 1fr;
+
+            gap: 10px;
+        }
+
+        .box {
+            border-radius: 4px;
+        }
+
+        /* Left Tall Box */
+        .box1 {
+            background: #6fc04e;
+            grid-row: 1 / 4;
+            grid-column: 1 / 2;
+        }
+
+        /* Top Center Wide */
+        .box2 {
+            background: #6fc04e;
+            grid-column: 2 / 4;
+        }
+
+        /* Top Right */
+        .box3 {
+            background: #ef2d2d;
+            grid-column: 4 / 5;
+        }
+
+        /* Middle Left */
+        .box4 {
+            background: #f4b52d;
+            grid-column: 2 / 3;
+        }
+
+        /* Middle Center */
+        .box5 {
+            background: #ef2d2d;
+            grid-column: 3 / 4;
+        }
+
+        /* Right Tall Box */
+        .box6 {
+            background: #6fc04e;
+            grid-column: 4 / 5;
+            grid-row: 2 / 4;
+        }
+
+        /* Bottom Left */
+        .box7 {
+            background: #ef2d2d;
+            grid-column: 2 / 3;
+        }
+
+        /* Bottom Center */
+        .box8 {
+            background: #f4b52d;
+            grid-column: 3 / 4;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="box green box1"></div>
-    <div class="box green box2"></div>
-    <div class="box green box3"></div>
-    <div class="box red box4"></div>
-    <div class="box yellow box5"></div>
-    <div class="box red box6"></div>
-    <div class="box green box7"></div>
-    <div class="box red box8"></div>
-    <div class="box yellow box9"></div>
-  </div>
+    <div class="grid-container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+        <div class="box box8"></div>
+    </div>
 </body>
+
 </html>
