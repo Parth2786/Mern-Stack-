@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accurate Grid Layout</title>
+  <style>
+    body {
+      background-color: #1e2a5a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 200px 200px 200px 200px;
+      grid-template-rows: 150px 150px 150px;
+      gap: 10px;
+    }
+
+    .box {
+      border-radius: 5px;
+    }
+
+    .green { background-color: #4CAF50; }
+    .red { background-color: #F44336; }
+    .yellow { background-color: #FFEB3B; }
+
+    /* Layout based on screenshot */
+    .box1 { grid-row: 1 / 4; grid-column: 1 / 2; } /* tall green left */
+    .box2 { grid-row: 1 / 2; grid-column: 2 / 3; } /* top green */
+    .box3 { grid-row: 1 / 2; grid-column: 3 / 4; } /* top green */
+    .box4 { grid-row: 1 / 2; grid-column: 4 / 5; } /* top red */
+    .box5 { grid-row: 2 / 3; grid-column: 2 / 3; } /* middle yellow */
+    .box6 { grid-row: 2 / 3; grid-column: 3 / 4; } /* middle red */
+    .box7 { grid-row: 2 / 4; grid-column: 4 / 5; } /* tall green right */
+    .box8 { grid-row: 3 / 4; grid-column: 2 / 3; } /* bottom red */
+    .box9 { grid-row: 3 / 4; grid-column: 3 / 4; } /* bottom yellow */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box green box1"></div>
+    <div class="box green box2"></div>
+    <div class="box green box3"></div>
+    <div class="box red box4"></div>
+    <div class="box yellow box5"></div>
+    <div class="box red box6"></div>
+    <div class="box green box7"></div>
+    <div class="box red box8"></div>
+    <div class="box yellow box9"></div>
+  </div>
+</body>
+</html>
