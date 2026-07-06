@@ -6,3 +6,8 @@ function greet(){
 
 let greeting = greet();
 greeting()
+
+var sayBye = () => {
+    console.log("Good Bye!");
+}
+sayBye();
