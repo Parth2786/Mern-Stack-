@@ -8,18 +8,26 @@ function BasicStudentsDetails(value){
 
 const students = [
     BasicStudentsDetails({ 
-        name: "Rahul Sharma", 
-        email: "rahul@gmail.com", 
-        phone: "9876543210" 
+        name: "Aman Sinha", 
+        email: "aman@gmail.com", 
+        phone: "7984981214" 
     }),
     BasicStudentsDetails({ 
-        name: "Priya Patel", 
-        email: "priya@gmail.com", 
-        phone: "9123456780" 
+        name: "Parth Vishvakarma", 
+        email: "parth@gmail.com", 
+        phone: "9303366954" 
     }),
     BasicStudentsDetails({ 
-        name: "Amit Singh", 
-        email: "amit@gmail.com", 
-        phone: "9988776655" 
+        name: "Raushan Kumar", 
+        email: "raushan@gmail.com", 
+        phone: "7654454504" 
     })
 ];
+
+students.forEach((student, index) => {
+    console.log(`Student ${index + 1}:`);
+    console.log(`Name: ${student.name}`);
+    console.log(`Email: ${student.email}`);
+    console.log(`Phone: ${student.phone}`);
+    console.log("-------------------");
+});
