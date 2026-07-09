@@ -130,3 +130,12 @@ const students = [
         ],
     },
 ];
+let arrayOfMarks = students.map(
+  (student) => student.examScore.reduce((acc, curr) => acc + curr.marks, 0)
+);
+
+let sortedArray = arrayOfMarks.sort((a, b) => b - a);
+
+console.log(arrayOfMarks);
+console.log(`Highest Marks: ${sortedArray[0]}`);
+
