@@ -36,9 +36,13 @@ function createBankAccount(accountHolder, mobile, email, balance) {
         }
     };
 }
+function sendWithdrawEmail(amount){
+    return `To ${this.accountHolder},
+    This is to inform you that that the amount `
+}
 
 // Create Account
-const account = createBankAccount("Parth Vishvakarma", "9876543210", "parth@example.com", 10000);
+const account = createBankAccount("Parth Vishvakarma", "9303366954", "parth@example.com", 10000);
 
 account.checkBankProfile();
 
