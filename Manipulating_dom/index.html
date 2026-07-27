@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="username" id="list" />
+    <script>
+        // Parent Element
+        let listItem = document.getElementById('list');
+        console.log(listItem.attributes);
+        console.log(listItem.hasAttribute('username'));
+        console.log(listItem.removeAttribute('name'));
+        console.log(listItem);
+        listItem.setAttribute("placeholder", "Enter your name");
+        listItem.setAttribute("value", "Value");
+        console.log(listItem.getAttribute('type'));
+    </script>
+</body>
+
+</html>
