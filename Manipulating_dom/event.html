@@ -9,8 +9,12 @@
     <button id="btn">Click me</button>
     <p id="msg"></p>
     <script>
+
         let button = document.getElementById('btn');
+
+        //Event Listener
         button.addEventListener("click",function(){
+            // Event handler to the particuler function
             document.getElementById("msg").innerText = "Hello Parth";
         });
 
