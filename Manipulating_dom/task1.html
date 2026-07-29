@@ -172,6 +172,7 @@
             const li = document.createElement("li");
             const span = document.createElement("span");
             span.textContent = task;
+
             const btnGroup = document.createElement("div");
             btnGroup.classList.add("btn-group");
 
@@ -204,6 +205,19 @@
 
             inputBox.value = "";
         });
+        list.addEventListener('click', e => {
+            const { target, type, value } = e;
+            console.log(target)
+            console.log(type)
+            if (e.target.classList.contains('complete-btn')) {
+                const listItem = e.target.closest('li');
+                listItem.classList.toggle('completed');
+            }
+            if (e.target.classList.contains('remove-btn')) {
+                let currentListItem = e.target.parentElement.parentElement;
+                list.removeChild(currentListItem);
+            }
+        })
     </script>
 </body>
 
