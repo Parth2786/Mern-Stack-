@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            background-color: rgb(176, 239, 218);
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            /* space between drawing-board and editor */
+        }
+
+        #drawing-board {
+            border: 2px solid blue;
+            height: 500px;
+            width: 1200px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        #drawing-board:hover {
+            border-color: red;
+        }
+
+        #canvas {
+            background-color: white;
+            display: block;
+            cursor: crosshair;
+        }
+
+        #editor {
+            background-color: whitesmoke;
+            height: 80px;
+            width: 1200px;
+            border: 2px solid white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            box-sizing: border-box;
+        }
+
+        #clear-btn {
+            height: 40px;
+            width: 90px;
+            background-color: #e57373;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #clear-btn:hover {
+            background-color: #d65f5f;
+        }
+
+        #brush-size {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        #brush-range {
+            width: 150px;
+        }
+
+        #color-picker {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        #color-input {
+            width: 36px;
+            height: 36px;
+            border: none;
+            border-radius: 6px;
+            padding: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="drawing-board">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div id="editor">
+        <button id="clear-btn">Clear</button>
+
+        <div id="brush-size">
+            <label for="brush-range">Brush Size</label>
+            <input type="range" id="brush-range" min="1" max="100" value="15">
+        </div>
+
+        <div id="color-picker">
+            <label for="color-input">Color</label>
+            <input type="color" id="color-input" value="#1f7a72">
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Match canvas size to its container
+        canvas.width = 1200;
+        canvas.height = 500;
+
+        let isDrawing = false;
+        let brushColor = document.getElementById('color-input').value;
+        let brushSize = document.getElementById('brush-range').value;
+
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        function startDrawing(e) {
+            isDrawing = true;
+            draw(e);
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+            ctx.beginPath(); // resets the path so lines don't connect across strokes
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            ctx.lineWidth = brushSize;
+            ctx.strokeStyle = brushColor;
+
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        }
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+        canvas.addEventListener('mousemove', draw);
+
+        // Hook up brush size slider
+        document.getElementById('brush-range').addEventListener('input', (e) => {
+            brushSize = e.target.value;
+        });
+
+        // Hook up color picker
+        document.getElementById('color-input').addEventListener('input', (e) => {
+            brushColor = e.target.value;
+        });
+
+        // Hook up clear button
+        document.getElementById('clear-btn').addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+    </script>
+</body>
+
+</html>
