@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Nama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "Outfit", sans-serif;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgb(255, 255, 255);
+            z-index: 1000;
+        }
+
+        nav span,
+        nav button,
+        nav a {
+            margin: 15px;
+            font-family: "Outfit", sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #111;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .main-heading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            text-align: center;
+        }
+
+        .main-heading h1 {
+            font-family: "Anton", sans-serif;
+            font-size: clamp(48px, 11vw, 160px);
+            font-weight: lighter;
+            line-height: 1.05;
+            color: #000000;
+            margin: 0;
+            letter-spacing: 0.05em;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <span>STUDIO NAMMA</span>
+        <button>Dark Mode</button>
+        <button>Menu</button>
+        <a href="#contact">LET'S TALK</a>
+    </nav>
+
+    <!-- Hero heading -->
+    <div class="main-heading">
+        <h1>WE THINK<br>CRAFT AND<br>DESIGN</h1>
+    </div>
+
+    <!-- Video section -->
+    <!-- <div class="video-section">
+        <video src="https://studionamma.vercel.app/videos/16-9_light-hd.mp4" autoplay muted loop playsinline></video>
+    </div> -->
+</body>
+
+</html>
